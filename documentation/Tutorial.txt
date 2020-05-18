@@ -238,12 +238,12 @@ Next we add the following lines after the first state set::
     }
     state ramp {
       when (delay(0.1)) {
-        if ((delta > 0.0 && vout >= 11.0) \|\|
-          (delta < 0.0 && vout <= -11.0)) {
+        if ((delta > 0.0 && vout >= 11.0) ||
+            (delta < 0.0 && vout <= -11.0)) {
           delta = -delta; /* change direction */
         }
         vout += delta;
-      } state ramp;
+      } state ramp
     }
   }
 
@@ -330,7 +330,7 @@ state::
       }
       when (delay(0.1)) {
         ...
-      } state ramp;
+      } state ramp
     }
   }
 
