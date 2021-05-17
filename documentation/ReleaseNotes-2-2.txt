@@ -1,6 +1,45 @@
 Release Notes for Version 2.2
 =============================
 
+.. _Release_Notes_2.2.9:
+
+Release 2.2.9
+-------------
+
+  * install build rules in the modern way (if available)
+
+    This allows installation into the same directory as EPICS base and other
+    modules, e.g. when packaging for Debian.
+
+    The configure/RULES_BUILD is replaced with configure/RULES_SNCSEQ and gets
+    installed via CFG. For compatibility with base-3.14, configure/RULES_BUILD
+    now includes the configure/RULES_SNCSEQ. The rules are protected against
+    multiple inclusion with a variable definition (like with C headers).
+
+    Thanks to Michael Davidsaver <mdavidsaver@gmail.com> for the patch (slightly
+    modified).
+
+  * snc: better error messages when file operations fail
+
+    Instead of calling perror, we now use strerror and our internal 'report'
+    function to conveniently compose a more detailed error message.
+
+  * snc, build rules: improve behavior when compilation fails
+
+    This changes snc so that it either doesn't touch the output file at all or
+    else removes it if there was an error. In addition, the build rules are
+    changed so that output files are removed before trying to create them.
+
+    Thanks to Johnson, Andrew N. <anj@anl.gov> for analysis and patch (slightly
+    modified, all errors are mine).
+
+  * tests: add test for (non-)existence of output file
+
+  * docs: fix code examples in tutorial
+
+    Thanks to luka.krmpotic@cosylab.com for the reporting these.
+
+
 .. _Release_Notes_2.2.8:
 
 Release 2.2.8
