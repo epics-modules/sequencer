@@ -115,6 +115,7 @@
 ### EPICS build system generated directories
 /O\.
 ^bin($|/)
+^cfg($|/)
 ^db($|/)
 ^dbd($|/)
 ^include($|/)
