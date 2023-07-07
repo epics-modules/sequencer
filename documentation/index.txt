@@ -15,6 +15,9 @@ State Notation Language and Sequencer
 :Bug Reports: tech-talk@aps.anl.gov
 :Version: |version|
 
+This page is a mirror of https://www-csr.bessy.de/control/SoftDist/sequencer/
+while the BESSY site is offline.
+
 Welcome to the home page of the **EPICS Sequencer** project.
 
 

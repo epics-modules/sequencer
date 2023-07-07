@@ -113,3 +113,9 @@ SILENT=$(if $(findstring s,$(MFLAGS)),>/dev/null,)
 pdf: html
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf $(SILENT)
+
+commit: html
+	touch O.Common/html/.nojekyll
+	./commit-gh.sh documentation/O.Common/html/ O.Common/html/.nojekyll O.Common/html/*.* O.Common/html/_*/*.*
+
+.PHONY: commit
