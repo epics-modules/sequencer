@@ -1,0 +1,21 @@
+diff -uri seq-2.2.9/test/compiler/snc_test.plt seq-2.2.9-fix/test/compiler/snc_test.plt
+--- seq-2.2.9/test/compiler/snc_test.plt	2021-05-19 13:35:39.000000000 +0200
++++ seq-2.2.9-fix/test/compiler/snc_test.plt	2023-01-27 12:15:47.642857803 +0100
+@@ -51,7 +51,7 @@
+   `make -s -B $prog.i`;
+   my $failed = 0;
+   # execute the snc and capture the output
+-  my $output = `..${dirsep}..${dirsep}..${dirsep}bin${dirsep}${host_arch}${dirsep}snc $prog.i -o $prog.c 2>&1`;
++  my $output = `..${dirsep}..${dirsep}..${dirsep}bin${dirsep}${host_arch}${dirsep}snc $prog.i -o $prog.xc 2>&1`;
+   # test whether it terminated normally
+   my $exitsig = $? & 127;
+   is ($exitsig, 0, "$prog: snc terminates normally") or $failed = 1;
+@@ -61,7 +61,7 @@
+     my $exitcode = $? >> 8;
+     my $errors_are_expected = $tests->{$prog}->{errors} > 0;
+     ok(($exitcode != 0) == $errors_are_expected, "$prog: correct exitcode");
+-    ok(-e "$prog.c" == ($exitcode == 0), "$prog: success <=> creates output file");
++    ok(-e "$prog.xc" == ($exitcode == 0), "$prog: success <=> creates output file");
+     my $nw = 0;
+     $nw++ while ($output =~ /warning/g);
+     is($nw, $tests->{$prog}->{warnings}, "$prog: number of warnings") or $failed = 1;

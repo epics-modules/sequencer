@@ -94,6 +94,8 @@ jobs:
       uses: mdavidsaver/ci-core-dumper@master
     - name: Prepare and compile dependencies
       run: python .ci/cue.py prepare
+    - name: Apply patches
+      run: patch -p1 -i ./seq-2.2.9-base707-fix.patch
     - name: Build main module
       run: python .ci/cue.py -T 60M build
     - name: Run main module tests
