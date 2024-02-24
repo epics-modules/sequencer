@@ -13,10 +13,9 @@ EPICS base
 
 You need to have `EPICS base`_ and its dependencies (`GNU make`_, `Perl`_)
 installed. Any version of EPICS base starting with 3.14.12.2 and up to 3.15
-should do. Starting with seq-`2.2.6`_, EPICS base versions up to 7.0.1 can be
-used.
+should do. Starting with seq-`2.2.6`_, EPICS 7 can be used.
 
-.. _EPICS base: http://www.aps.anl.gov/epics/base/
+.. _EPICS base: https://epics-controls.org/resources-and-support/base/
 .. _GNU make: http://www.gnu.org/software/make/
 .. _Perl: http://www.perl.org/
 
@@ -49,7 +48,7 @@ Download
 
 Releases are available here:
 
-   http://www-csr.bessy.de/control/SoftDist/sequencer/releases/
+   https://github.com/epics-modules/sequencer/tags
 
 The current stable release is `2.2.9`_. Please take a look at the
 `VersioningPolicy` if you are unsure whether to upgrade to
@@ -58,17 +57,8 @@ a new release.
 .. note::
 
   The documentation and download links you will find on this page are for
-  version 2.2. The `documentation for version 2.1`_ is still there and will
-  be maintained at least until version 2.3 is released.
+  version 2.2.
 
-Development snapshots are available under the name
-
-   seq-<version>-snapshot-<date>.tar.gz
-
-where <version> is the branch name without the 'branch-' prefix.
-
-In the releases directory there is always a symbolic link to the
-`latest snapshot`_.
 
 Here are all releases for version 2.2:
 
@@ -86,17 +76,17 @@ Here are all releases for version 2.2:
    `2.2.1`_   `Release_Notes_2.2.1`   `Known_Problems_2.2.1`
    ========== ======================= ============================
 
-If you want to help testing, please use the `latest snapshot`_, or check out
+If you want to help testing, please check out
 the `darcs`_ repository for `branch-2-2`_::
 
-   darcs get http://www-csr.bessy.de/control/SoftDist/sequencer/repo/branch-2-2
+   darcs get https://hub.darcs.net/bf/seq-branch-2-2
 
-Since release 2.2.2 there is also a git mirror, so you can as well ::
+Using this git mirror, you can as well ::
 
-   git clone http://www-csr.bessy.de/control/SoftDist/sequencer/repo/branch-2-2.git
+   git clone https://github.com/epics-modules/sequencer.git
 
-but please note that this is just a mirror, no more: I cannot accept git
-patches (or whatever they are called in git); it may also happen that I have
+but please note that this is just a mirror: I cannot accept git
+patches or work with GitHub Pull Requests; it may also happen that I have
 to re-create the whole git repo from scratch (because incremental conversion
 sometimes fails).
 
@@ -104,27 +94,18 @@ Development of new features now happens on `branch-2-3`_.
 
 See `Contribute`_ for a short description how to record and send patches.
 
-You can also follow development by using the `repository browser`_.
-
-.. _latest snapshot: http://www-csr.bessy.de/control/SoftDist/sequencer/releases/seq-2-2-snapshot-latest.tar.gz
-.. _2.2.9: http://www-csr.bessy.de/control/SoftDist/sequencer/releases/seq-2.2.9.tar.gz
-.. _2.2.8: http://www-csr.bessy.de/control/SoftDist/sequencer/releases/seq-2.2.8.tar.gz
-.. _2.2.7: http://www-csr.bessy.de/control/SoftDist/sequencer/releases/seq-2.2.7.tar.gz
-.. _2.2.6: http://www-csr.bessy.de/control/SoftDist/sequencer/releases/seq-2.2.6.tar.gz
-.. _2.2.5: http://www-csr.bessy.de/control/SoftDist/sequencer/releases/seq-2.2.5.tar.gz
-.. _2.2.4: http://www-csr.bessy.de/control/SoftDist/sequencer/releases/seq-2.2.4.tar.gz
-.. _2.2.3: http://www-csr.bessy.de/control/SoftDist/sequencer/releases/seq-2.2.3.tar.gz
-.. _2.2.2: http://www-csr.bessy.de/control/SoftDist/sequencer/releases/seq-2.2.2.tar.gz
-.. _2.2.1: http://www-csr.bessy.de/control/SoftDist/sequencer/releases/seq-2.2.1.tar.gz
-.. _repository browser: http://www-csr.bessy.de/cgi-bin/darcsweb.cgi
-.. _branch-2-0: http://www-csr.bessy.de/cgi-bin/darcsweb.cgi?r=seq%20branch-2-0;a=summary
-.. _branch-2-1: http://www-csr.bessy.de/cgi-bin/darcsweb.cgi?r=seq%20branch-2-1;a=summary
-.. _branch-2-2: http://www-csr.bessy.de/cgi-bin/darcsweb.cgi?r=seq%20branch-2-2;a=summary
-.. _branch-2-3: http://www-csr.bessy.de/cgi-bin/darcsweb.cgi?r=seq%20branch-2-3;a=summary
-.. _old: http://www-csr.bessy.de/control/SoftDist/sequencer/repo/old/
-.. _stable: http://www-csr.bessy.de/control/SoftDist/sequencer/repo/stable/
-.. _experimental: http://www-csr.bessy.de/control/SoftDist/sequencer/repo/experimental/
-.. _documentation for version 2.1: http://www-csr.bessy.de/control/SoftDist/sequencer-2-1/index.html
+.. _2.2.9: https://github.com/epics-modules/sequencer/releases/tag/R2-2-9
+.. _2.2.8: https://github.com/epics-modules/sequencer/releases/tag/R2-2-8
+.. _2.2.7: https://github.com/epics-modules/sequencer/releases/tag/R2-2-7
+.. _2.2.6: https://github.com/epics-modules/sequencer/releases/tag/R2-2-6
+.. _2.2.5: https://github.com/epics-modules/sequencer/releases/tag/R2-2-5
+.. _2.2.4: https://github.com/epics-modules/sequencer/releases/tag/R2-2-4
+.. _2.2.3: https://github.com/epics-modules/sequencer/releases/tag/R2-2-3
+.. _2.2.2: https://github.com/epics-modules/sequencer/releases/tag/R2-2-2
+.. _2.2.1: https://github.com/epics-modules/sequencer/releases/tag/R2-2-1
+.. _branch-2-1: https://hub.darcs.net/bf/seq-branch-2-1
+.. _branch-2-2: https://hub.darcs.net/bf/seq-branch-2-2
+.. _branch-2-3: https://hub.darcs.net/bf/seq-branch-2-3
 
 Unpack
 ------
@@ -132,16 +113,16 @@ Unpack
 Change to the directory that you wish to be the parent of the sequencer
 source tree. Then unpack and untar the file. For example::
 
-   gunzip seq-x.y.z.tar.gz
-   tar xf seq-x.y.z.tar
+   gunzip sequencer-Rx-y-z.tar.gz
+   tar xf sequencer-Rx-y-z.tar
 
 or, if you have `GNU tar`_, simply::
 
-   tar zxf seq-x.y.z.tar.gz
+   tar zxf sequencer-Rx-y-z.tar.gz
 
 You can now::
 
-   cd seq-x.y.z
+   cd sequencer-Rx-y-z
 
 and look at the source tree. The actual source code for the sequencer
 is under ``src``. The documentation sources are under ``documentation`` and
@@ -150,7 +131,7 @@ consist of plain readable text files (actually, the format is
 make changes to the docs).
 
 In what follows, ``$SEQ`` refers to the directory where you are now,
-i.e. ``.../seq-x.y.z/``.
+i.e. ``.../sequencer-Rx-y-z/``.
 
 .. _GNU tar: http://www.gnu.org/software/tar/
 .. _reStructuredText: http://docutils.sourceforge.net/rst.html
@@ -316,9 +297,9 @@ into your Makefile. Here, ``xyz.st`` is the name of your SNL program, and
 ``abc`` is the name of the library or binary to produce. Note that ``.st``
 files are run through the C preprocessor (`cpp`) before giving them to
 the SNL compiler. Use the extension ``.stt`` to avoid this. For details,
-see Chapter 4 of the `EPICS Application Developer's Guide`_.
+see the relevant part in the `EPICS Application Developer's Guide`_.
 
-.. _EPICS Application Developer's Guide: http://www.aps.anl.gov/epics/base/R3-14/11-docs/AppDevGuide.pdf
+.. _EPICS Application Developer's Guide: https://docs.epics-controls.org/en/latest/build-system/specifications.html#state-notation-programs
 
 A complete example application that also uses the sequencer can be
 produced using makeBaseApp, e.g. ::
@@ -350,7 +331,7 @@ For more involved changes you might want to send a `darcs`_ patch. You can
 create a local copy of the `darcs`_ repository (the stable branch in this
 example) by saying::
 
-   darcs get http://www-csr.bessy.de/control/SoftDist/sequencer/repo/stable
+   darcs get https://hub.darcs.net/bf/seq-branch-2-2
 
 Assuming you have made some changes, first update your repository to
 include the latest changes from upstream (with darcs this is not
