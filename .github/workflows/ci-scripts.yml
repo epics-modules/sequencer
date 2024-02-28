@@ -1,4 +1,4 @@
-name: Sequencer
+name: Sequencer-Build
 
 on:
   push:

@@ -1,0 +1,69 @@
+name: Sequencer-Docs
+
+on:
+  push:
+    paths:
+      - 'documentation/**'
+      - '.github/workflows/*'
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+env:
+  SETUP_PATH: .ci-local
+
+jobs:
+  build:
+    name: Build html documentation
+    runs-on: ubuntu-latest
+    env:
+      CMP: gcc
+      BCFG: default
+      BASE: "7.0"
+      EXTRA: "docs"
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: true
+    - name: "apt-get install"
+      run: |
+        sudo apt-get update
+        sudo apt-get -y install re2c sphinx latexmk texlive-fonts-recommended \
+        texlive-latex-recommended texlive-latex-extra
+        sudo pip3 install sphinxcontrib-blockdiag
+    - name: Prepare and compile dependencies
+      run: python .ci/cue.py prepare
+    - name: Build documentation
+      run: python .ci/cue.py build 
+    - name: Finalize doc site
+      run: |
+        cp documentation/O.Common/latex/Manual.pdf documentation/O.Common/html
+        touch documentation/O.Common/html/.nojekyll
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: 'documentation/O.Common/html'
+
+  deploy:
+    needs: build
+    name: Deploy on Pages
+    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
