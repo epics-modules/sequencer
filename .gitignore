@@ -1,0 +1,9 @@
+bin/
+cfg/
+db/
+dbd/
+html/
+include/
+lib/
+O.*/
+*.local
