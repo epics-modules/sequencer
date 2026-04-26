@@ -38,7 +38,6 @@ in your PATH environment variable, you should change the definition of RE2C
 in configure/CONFIG_SITE to the full path name of the re2c executable before
 building the sequencer, see `Configure and Build` below.
 
-.. _re2c: http://re2c.org/
 .. _old re2c download: http://sourceforge.net/projects/re2c/files/old/
 .. _EPICS-re2c: https://github.com/FreddieAkeroyd/EPICS-re2c
 .. _re2c-1.0.3 on Appveyor: https://ci.appveyor.com/project/FreddieAkeroyd/re2c/build/artifacts
@@ -126,15 +125,13 @@ You can now::
 
 and look at the source tree. The actual source code for the sequencer
 is under ``src``. The documentation sources are under ``documentation`` and
-consist of plain readable text files (actually, the format is
-`reStructuredText`_ but you need to know about that only if you plan to
-make changes to the docs).
+consist of plain readable text files (in reStructuredText format,
+but you need to know about that only if you plan to make changes to the docs).
 
 In what follows, ``$SEQ`` refers to the directory where you are now,
 i.e. ``.../sequencer-Rx-y-z/``.
 
 .. _GNU tar: http://www.gnu.org/software/tar/
-.. _reStructuredText: http://docutils.sourceforge.net/rst.html
 
 
 .. _Configure and Build:
@@ -160,7 +157,7 @@ your ``PATH``).
 Your environment should be configured for building EPICS applications.
 This means that ``EPICS_HOST_ARCH`` and (possibly) ``LD_LIBRARY_PATH``
 should be correctly defined. See the `EPICS Application Developer's Guide
-<http://www.aps.anl.gov/epics/base/R3-14/11-docs/AppDevGuide.pdf>`_ 
+<https://docs.epics-controls.org/en/latest/appdevguide/gettingStarted.html>`_
 for details.
 
 After changing the files in ``configure``, run GNU make.
@@ -176,7 +173,7 @@ should be reported, see `Report Bugs`_).
 Building the Manual
 ^^^^^^^^^^^^^^^^^^^
 
-From 2.0.99 on, the manual is in `reStructuredText`_ format. This
+From 2.0.99 on, the manual is in reStructuredText format. This
 format is (more or less) readable plain text, so this section is optional.
 
 Building the manual means generating a set of html pages and maybe a
@@ -200,9 +197,6 @@ you need to have a working latex installation. On my system (kubuntu
 karmic at the time of writing this) I also needed to install the package
 tetex-extra.
 
-.. _reStructuredText: http://docutils.sourceforge.net/rst.html
-.. _Python: http://www.python.org/
-.. _Sphinx: http://sphinx.pocoo.org/
 
 .. _Verifyingtheinstallation:
 
@@ -297,9 +291,8 @@ into your Makefile. Here, ``xyz.st`` is the name of your SNL program, and
 ``abc`` is the name of the library or binary to produce. Note that ``.st``
 files are run through the C preprocessor (`cpp`) before giving them to
 the SNL compiler. Use the extension ``.stt`` to avoid this. For details,
-see the relevant part in the `EPICS Application Developer's Guide`_.
-
-.. _EPICS Application Developer's Guide: https://docs.epics-controls.org/en/latest/build-system/specifications.html#state-notation-programs
+see the `relevant part in the EPICS Application Developer's Guide
+<https://docs.epics-controls.org/en/latest/build-system/specifications.html#state-notation-programs>`_.
 
 A complete example application that also uses the sequencer can be
 produced using makeBaseApp, e.g. ::

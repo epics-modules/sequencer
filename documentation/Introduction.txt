@@ -59,7 +59,6 @@ also *not* done by snc. Instead this task is delegated to the EPICS build
 system by making the Sequencer an EPICS *support module* that automatically
 adds appropriate build rules for SNL source files.
 
-.. _EPICS base: http://www.aps.anl.gov/epics/base/index.php
 .. _Channel Access: http://www.aps.anl.gov/epics/base/R3-14/12-docs/CAref.html
 .. _high-level language: http://www.haskell.org/
 
@@ -84,7 +83,6 @@ Muir provided documentation patches.
 Special thanks go to the people who develop and maintain `re2c`_, the
 ultimate tool to generate versatile and extremely fast lexers for C and C++.
 
-.. _re2c: http://re2c.org/
 
 Copying and Distribution
 ------------------------

@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  SETUP_PATH: .ci-local
+  SETUP_PATH: .ci-local:.ci
 
 jobs:
   build:
@@ -34,8 +34,8 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get -y install re2c sphinx latexmk texlive-fonts-recommended \
-        texlive-latex-recommended texlive-latex-extra
-        sudo pip3 install sphinxcontrib-blockdiag
+        texlive-latex-recommended texlive-latex-extra libjpeg-dev zlib1g-dev
+        sudo pip3 install sphinxcontrib-blockdiag "Pillow<10.0.0"
     - name: Prepare and compile dependencies
       run: python .ci/cue.py prepare
     - name: Build documentation

@@ -39,4 +39,9 @@ Welcome to the home page of the **EPICS Sequencer** project.
    Plans
    Glossary
 
-.. `genindex`
+.. _reStructuredText: http://docutils.sourceforge.net/rst.html
+.. _EPICS base: https://epics-controls.org/resources-and-support/base/
+.. _re2c: http://re2c.org/
+.. _Python: http://www.python.org/
+.. _Sphinx: http://sphinx.pocoo.org/
+.. _EPICS Application Developer's Guide: https://docs.epics-controls.org/en/latest/appdevguide/gettingStarted.html
