@@ -19,10 +19,11 @@ jobs:
     name: ${{ matrix.name }}
     runs-on: ${{ matrix.os }}
     # Set environment variables from matrix parameters
-    env:    
+    env:
       CMP: ${{ matrix.cmp }}
       BCFG: ${{ matrix.configuration }}
       BASE: ${{ matrix.base }}
+      BASE_RECURSIVE: no
       CI_CROSS_TARGETS: ${{ matrix.cross }}
       EXTRA: ${{ matrix.extra }}
       TEST: ${{ matrix.test }}
@@ -67,28 +68,28 @@ jobs:
             cmp: clang
             configuration: default
             base: "7.0"
-            name: "Mac clang base-7.0"
+            name: "MacOS clang base-7.0"
 
-          - os: windows-2019
-            cmp: vs2019
+          - os: windows-2022
+            cmp: vs2022
             configuration: default
             base: "7.0"
-            name: "Win2019 MSC19 base-7.0"
+            name: "Win-22 MSC22 base-7.0"
 
-          - os: windows-2019
-            cmp: vs2019
+          - os: windows-2022
+            cmp: vs2022
             configuration: static
             base: "7.0"
-            name: "Win2019 MSC19 static base-7.0"
+            name: "Win-22 MSC22 base-7.0 static"
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
       with:
         submodules: true
     - name: "apt-get install"
       run: |
         sudo apt-get update
-        sudo apt-get -y install re2c gdb
+        sudo apt-get -y install re2c gdb libreadline-dev
       if: runner.os == 'Linux'
     - name: Automatic core dumper analysis
       uses: mdavidsaver/ci-core-dumper@master

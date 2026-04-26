@@ -27,7 +27,7 @@ jobs:
       BASE: "7.0"
       EXTRA: "docs"
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
       with:
         submodules: true
     - name: "apt-get install"
@@ -39,7 +39,7 @@ jobs:
     - name: Prepare and compile dependencies
       run: python .ci/cue.py prepare
     - name: Build documentation
-      run: python .ci/cue.py build 
+      run: python .ci/cue.py build
     - name: Finalize doc site
       run: |
         cp documentation/O.Common/latex/Manual.pdf documentation/O.Common/html
