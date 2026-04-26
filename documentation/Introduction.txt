@@ -80,7 +80,10 @@ Mark Rivers made a number of useful suggestions and tested version 2.1
 with several sets of existing programs on various platforms. J. Lewis
 Muir provided documentation patches.
 
-Special thanks go to the people who develop and maintain `re2c`_, the
+Ben Franksen (HZB/BESSY II) greatly improved and maintained the code
+for more than 15 years between 2010 and 2025.
+
+Special thanks go to the people who develop and maintain re2c, the
 ultimate tool to generate versatile and extremely fast lexers for C and C++.
 
 
@@ -92,6 +95,7 @@ Agreement found in the file LICENSE that is included with this
 distribution.
 
 .. include:: ../LICENSE
+
 
 Note on Versions
 ----------------
