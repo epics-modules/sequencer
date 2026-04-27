@@ -78,7 +78,7 @@ If you want to help testing, please clone ::
 
    git clone https://github.com/epics-modules/sequencer.git
 
-See `Contribute`_ for a short description how to record and send patches.
+See `Contribute`_ for a short description how to prepare changes.
 
 .. _2.2.9: https://github.com/epics-modules/sequencer/releases/tag/R2-2-9
 .. _2.2.8: https://github.com/epics-modules/sequencer/releases/tag/R2-2-8
@@ -89,9 +89,6 @@ See `Contribute`_ for a short description how to record and send patches.
 .. _2.2.3: https://github.com/epics-modules/sequencer/releases/tag/R2-2-3
 .. _2.2.2: https://github.com/epics-modules/sequencer/releases/tag/R2-2-2
 .. _2.2.1: https://github.com/epics-modules/sequencer/releases/tag/R2-2-1
-.. _branch-2-1: https://hub.darcs.net/bf/seq-branch-2-1
-.. _branch-2-2: https://hub.darcs.net/bf/seq-branch-2-2
-.. _branch-2-3: https://hub.darcs.net/bf/seq-branch-2-3
 
 Unpack
 ------
