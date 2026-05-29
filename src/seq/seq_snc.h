@@ -113,7 +113,7 @@ struct seqProgram
 	unsigned	numChans;	/* number of db channels */
 	seqSS		*ss;		/* array of state set info structs */
 	unsigned	numSS;		/* number of state sets */
-	unsigned	varSize;	/* # bytes in user variable area */
+	size_t		varSize;	/* # bytes in user variable area */
 	const char	*params;	/* program paramters */
 	unsigned	numEvFlags;	/* number of event flags */
 	seqMask		options;	/* program option mask */
