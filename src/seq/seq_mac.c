@@ -78,7 +78,7 @@ void seqMacEval(PROG *sp, const char *inStr, char *outStr, size_t maxChar)
 
 				DEBUG("Value=%s, ", value);
 
-				strncpy(outStr, value, valLth);
+				strncpy(outStr, value, maxChar);
 				maxChar -= valLth;
 				outStr += valLth;
 			}
