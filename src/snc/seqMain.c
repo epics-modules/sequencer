@@ -25,7 +25,8 @@ int main(int argc,char *argv[]) {
         seqRegisterSequencerCommands();
         iocsh(0);
     } else {
-        epicsThreadExitMain();
+        // epicsThreadExitMain();
+        while (1) epicsThreadSleep(1);
     }
     return(0);
 }
